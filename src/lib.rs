@@ -19,7 +19,7 @@ fn parse(query: &str) -> PyResult<String> {
 
 /// A Python module implemented in Rust.
 #[pymodule]
-fn graphql_core_rs(_py: Python, m: &PyModule) -> PyResult<()> {
+fn graphql_core_rs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     m.add_function(wrap_pyfunction!(parse, m)?)?;
     Ok(())
