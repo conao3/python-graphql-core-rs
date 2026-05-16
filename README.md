@@ -59,7 +59,7 @@ maturin develop --release
 
 - Python 3.7+
 - Rust toolchain
-- Maturin 0.13.x
+- Maturin 1.7.x
 
 ## License
 
