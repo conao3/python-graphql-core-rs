@@ -8,7 +8,7 @@ This library provides Python bindings to the [graphql-parser](https://crates.io/
 
 - Fast GraphQL query parsing using Rust's graphql-parser
 - Native Python extension built with PyO3
-- Supports Python 3.7+ (CPython and PyPy)
+- Supports Python 3.9+ (CPython and PyPy)
 
 ## Installation
 
@@ -57,9 +57,9 @@ maturin develop --release
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+
 - Rust toolchain
-- Maturin 1.7.x
+- Maturin 1.15.x
 
 ## License
 
