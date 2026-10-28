@@ -1,10 +1,10 @@
 [build-system]
-requires = ["maturin>=1.7,<2"]
+requires = ["maturin>=1.15,<2"]
 build-backend = "maturin"
 
 [project]
 name = "python-graphql-core-rs"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
