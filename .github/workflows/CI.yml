@@ -11,14 +11,14 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v7
-    - uses: messense/maturin-action@v1
+    - uses: actions/checkout@v7.0.1
+    - uses: PyO3/maturin-action@v1.51.0
       with:
         manylinux: auto
         command: build
         args: --release --sdist -o dist --find-interpreter
     - name: Upload wheels
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v7.0.2
       with:
         name: wheels-linux
         path: dist
@@ -26,13 +26,13 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v7
-    - uses: messense/maturin-action@v1
+    - uses: actions/checkout@v7.0.1
+    - uses: PyO3/maturin-action@v1.51.0
       with:
         command: build
         args: --release -o dist --find-interpreter
     - name: Upload wheels
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v7.0.2
       with:
         name: wheels-windows
         path: dist
@@ -40,13 +40,13 @@ jobs:
   macos:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v7
-    - uses: messense/maturin-action@v1
+    - uses: actions/checkout@v7.0.1
+    - uses: PyO3/maturin-action@v1.51.0
       with:
         command: build
         args: --release -o dist --target universal2-apple-darwin --find-interpreter
     - name: Upload wheels
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v7.0.2
       with:
         name: wheels-macos
         path: dist
@@ -57,12 +57,12 @@ jobs:
     if: "startsWith(github.ref, 'refs/tags/')"
     needs: [ macos, windows, linux ]
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@v8.0.2
         with:
           pattern: wheels-*
           merge-multiple: true
       - name: Publish to PyPI
-        uses: messense/maturin-action@v1
+        uses: PyO3/maturin-action@v1.51.0
         env:
           MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
         with:
