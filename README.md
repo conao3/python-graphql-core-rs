@@ -55,6 +55,16 @@ Run with release optimizations:
 maturin develop --release
 ```
 
+## Release
+
+Run the Release workflow from `master`:
+
+```bash
+gh workflow run release.yml --ref master -f version_bump=patch
+```
+
+The run bumps the version in `Cargo.toml` and `Cargo.lock`, pushes the version commit to `master` together with the annotated tag `v<version>`, builds the wheels and the sdist from that tag, publishes them to PyPI as `python-graphql-core-rs` with trusted publishing (environment `pypi`), and creates the GitHub Release.
+
 ## Requirements
 
 - Python 3.9+

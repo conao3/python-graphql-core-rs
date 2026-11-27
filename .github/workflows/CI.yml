@@ -50,21 +50,3 @@ jobs:
       with:
         name: wheels-macos
         path: dist
-
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    if: "startsWith(github.ref, 'refs/tags/')"
-    needs: [ macos, windows, linux ]
-    steps:
-      - uses: actions/download-artifact@v8.0.2
-        with:
-          pattern: wheels-*
-          merge-multiple: true
-      - name: Publish to PyPI
-        uses: PyO3/maturin-action@v1.51.0
-        env:
-          MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
-        with:
-          command: upload
-          args: --skip-existing *
