@@ -1,4 +1,12 @@
-# python-graphql-core-rs
+<p align="center"><img src="docs/assets/banner.png" alt="python-graphql-core-rs: Fast GraphQL parser for Python, built with Rust" width="880"></p>
+
+<p align="center"><strong>Fast GraphQL parser for Python, built with Rust</strong></p>
+
+<p align="center"><a href="https://github.com/conao3/python-graphql-core-rs/actions/workflows/CI.yml"><img src="https://github.com/conao3/python-graphql-core-rs/actions/workflows/CI.yml/badge.svg?branch=master" alt="CI"></a> <a href="https://github.com/conao3/python-graphql-core-rs/releases"><img src="https://img.shields.io/github/v/tag/conao3/python-graphql-core-rs" alt="Latest tag"></a> <a href="LICENSE"><img src="https://img.shields.io/github/license/conao3/python-graphql-core-rs" alt="License"></a> <a href="https://github.com/conao3/python-graphql-core-rs/stargazers"><img src="https://img.shields.io/github/stars/conao3/python-graphql-core-rs?style=flat" alt="GitHub stars"></a></p>
+
+<p align="center"><a href="#installation">Installation</a> | <a href="#usage">Usage</a> | <a href="#development">Development</a> | <a href="#license">License</a></p>
+
+<h1>python-graphql-core-rs</h1>
 
 A high-performance GraphQL parser for Python, powered by Rust.
 
